@@ -1,0 +1,39 @@
+<% include ../partials/header %> 
+
+<div class="container">
+  <div class="row">
+    <header class="jumbotron jumbotron-new">
+        <h1 style="text-aligh: center">Edit <%= bag.name %></h1>
+    </header>
+    <div style="width: 30%; margin: 25px auto;">
+        <form action="/bagList/<%= bag._id %>?_method=PUT" method="POST">
+            <div class="form-group">
+                <label for="brand">Brand Name:</label>
+                <input id="brand" type="text" class="form-control" name="bag[brand]" value="<%= bag.brand %>" aria-describedby="basic-addon1">
+            </div>
+            <div class="form-group">
+                <label for="name">Bag Name:</label>
+                <input id="name" type="text" class="form-control" name="bag[name]" value="<%= bag.name %>" aria-describedby="basic-addon1">
+            </div>
+            <div class="form-group">
+                <label for="price">Bag Name:</label>
+                <input id="price" type="number" class="form-control" name="bag[price]" value="<%= bag.price %>" aria-describedby="basic-addon1">
+            </div>
+            <div class="form-group">
+                <label for="image">Image URL:</label>
+                <input id="image" type="text" class="form-control" name="bag[image]" value="<%= bag.image %>" aria-describedby="basic-addon1">
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea class="form-control" rows="5" id="description" name="bag[description]"><%= bag.description %></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%">Submit</button>
+        </form>
+        <p style="padding-top: 6px;">
+            <a href="/bagList" style="color: #337ab7;">Go Back</a>
+        </p>
+      </div>
+    </div>
+</div>
+
+<% include ../partials/footer %> 

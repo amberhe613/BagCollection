@@ -1,0 +1,33 @@
+<% include ../partials/header %> 
+<div class="container">
+  <div class="row">
+    <header class="jumbotron jumbotron-new">
+        <h1 style="text-aligh: center">Create a New Bag Collection</h1>
+        <p>Add Your Favorite Bag</p>
+    </header>
+    <div style="width: 30%; margin: 25px auto;">
+        <form action="/bagList" method="POST">
+            <div class="form-group">
+              <input type="text" class="form-control" name="bag[brand]" placeholder="Brand Name" aria-describedby="basic-addon1">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="bag[name]" placeholder="Bag Name" aria-describedby="basic-addon1">
+            </div>
+            <div class="form-group">
+              <input type="number" class="form-control" name="bag[price]" placeholder="Bag Price" aria-describedby="basic-addon1" min="0.01" step="0.01">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="bag[image]" placeholder="Image URL" aria-describedby="basic-addon1">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="bag[description]" placeholder="Description" aria-describedby="basic-addon1">
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%">Submit</button>
+        </form>
+        <p style="padding-top: 6px;">
+            <a href="/bagList" style="color: #337ab7;">Go Back</a>
+        </p>
+      </div>
+    </div>
+</div>
+<% include ../partials/footer %> 

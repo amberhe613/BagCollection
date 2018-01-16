@@ -1,0 +1,26 @@
+<% include ../partials/header %>
+<div class="container">
+    <header class="jumbotron">
+        <h1>Find Out Your Favorite Bag!</h1>
+        <p>View our hand-picked luxury bags from all over the world</p>
+        <p>
+            <a class="btn btn-info btn-lg" href="/bagList/new">Add A New Bag</a>
+        </p>
+    </header>
+    <div class="row">
+        <h3>Our Most Popular Bags!</h3>
+        <% bagList.forEach(function(bag) { %>
+        <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+            <img src="<%= bag["image"] %>"></img>
+                <div class="caption">
+                    <h3><%= bag["name"] %></h3>
+                    <p><%= bag["brand"] %></p>
+                    <p><a href="/bagList/<%= bag._id %>" class="btn btn-primary" role="button">More info</a></p>
+                </div>
+            </div>
+        </div>
+        <% }) %>
+    </div>
+</div>
+<% include ../partials/footer %> 

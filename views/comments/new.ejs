@@ -1,0 +1,19 @@
+<% include ../partials/header %> 
+<div class="container">
+  <div class="row">
+        <h1 style="text-aligh: center">Add New Comment to <%= bag.name %></h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/bagList/<%= bag._id %>/comments" method="POST">
+                <div class="form-group">
+                  <label for="comment">Comment:</label>
+                  <textarea class="form-control" rows="5" id="comment" name="comment[text]"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%">Submit</button>
+            </form>
+        <p style="padding-top: 6px;">
+            <a href="/bagList/<%= bag._id %>" style="color: #337ab7;">Go Back</a>
+        </p>
+      </div>
+    </div>
+</div>
+<% include ../partials/footer %> 
