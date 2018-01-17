@@ -19,6 +19,7 @@ var commentRoutes = require("./routes/comments"),
     bagRoutes     = require("./routes/bags"),
     indexRoute    = require("./routes/index");
     
+console.log(process.env.MONGODB_URI);
 mongoose.connect(process.env.MONGODB_URI);
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
